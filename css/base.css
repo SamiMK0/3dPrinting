@@ -1,0 +1,45 @@
+:root {
+  /* Brand */
+  --brand: #f97316;          /* Primary orange */
+  --brand-soft: #fb923c;
+
+  /* Backgrounds */
+  --bg: #0a0f1a;
+  --bg-card: #111827;
+  --bg-glass: rgba(17, 24, 39, 0.7);
+
+  /* Text */
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+
+  /* Borders & Radius */
+  --border: #1e3a5f;
+  --radius: 12px;
+
+  /* Shadows */
+  --shadow-brand: 0 0 40px rgba(249, 115, 22, 0.35);
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+
+
+}
+
+.glass-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--brand), var(--brand-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-soft));
+  box-shadow: var(--shadow-brand);
+}
