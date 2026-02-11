@@ -1,4 +1,7 @@
-﻿﻿
+﻿﻿html, body {
+  overflow-x: hidden;
+}
+
 
 /* ================= HERO ================= */
 .hero {
@@ -304,7 +307,14 @@
   .hero {
     height: 300px;   /* ✅ show products faster */
   }
+    .hero::before {
+    width: 280px;
+    height: 280px;
+    top: -120px;
+    left: -120px;
+  }
 }
+
 
 
 /* === FIX: Prevent Products page from breaking fixed navbar on mobile === */
