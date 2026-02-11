@@ -133,7 +133,9 @@ ctx.font = `bold ${fontSize}px Arial`;
       gradient.addColorStop(1, '#ff6b00');
       ctx.fillStyle = gradient;
 
-      ctx.fillText('3D Printing by Mirvat', 0, 0);
+      const safeWidth = canvas.width * 0.9;  // 10% horizontal padding
+ctx.fillText('3D Printing by Mirvat', 0, 0, safeWidth);
+
       ctx.restore();
 
       angle += 0.02;
@@ -141,11 +143,12 @@ ctx.font = `bold ${fontSize}px Arial`;
     }
 
     draw();
+    
 
     // Make canvas responsive
 window.addEventListener('resize', () => {
-  canvas.width = Math.min(window.innerWidth * 0.95, 1200);
-  canvas.height = window.innerWidth < 600 ? 160 : 300;
+  canvas.width = Math.min(window.innerWidth * 0.9, 1200);
+  canvas.height = window.innerWidth < 600 ? 140 : 260;
 });
 
   </script>
