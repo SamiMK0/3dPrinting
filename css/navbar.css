@@ -84,12 +84,27 @@ nav {
 
 .cart {
   font-size: 1.4rem;
+    position: relative;
+
   cursor: pointer;
   color: var(--text);
   transition: 0.3s;
   z-index: 1001;
 }
-
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ff6b00;
+  color: #000;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 999px;
+  min-width: 18px;
+  text-align: center;
+  line-height: 1.2;
+}
 .cart:hover {
   color: var(--brand);
 }

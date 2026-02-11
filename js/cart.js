@@ -65,3 +65,36 @@ cartItemsContainer.addEventListener("click", e => {
 });
 
 renderCart();
+
+function sendOrderToWhatsApp() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  let message = "🧾 *New 3D Printing Order*%0A%0A";
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    const itemTotal = item.price * item.quantity;
+    total += itemTotal;
+
+    message += `${index + 1}. ${item.name}%0A`;
+    message += `   Quantity: ${item.quantity}%0A`;
+    message += `   Price: $${item.price.toFixed(2)}%0A`;
+    message += `   Subtotal: $${itemTotal.toFixed(2)}%0A%0A`;
+  });
+
+  message += `--------------------%0A`;
+  message += `*Total: $${total.toFixed(2)}*%0A%0A`;
+  message += `Please confirm availability and delivery details. 🙏`;
+
+  const phone = "96171290849"; // your WhatsApp number
+  const url = `https://wa.me/${phone}?text=${message}`;
+
+  window.open(url, "_blank");
+}
+document.getElementById("checkout-btn").addEventListener("click", sendOrderToWhatsApp);

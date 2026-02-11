@@ -39,6 +39,7 @@
   <div class="mobile-icons">
     <div class="cart" onclick="location.href='cart.html'">
       <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-badge" id="cart-count">0</span>
     </div>
     
     <!-- Hamburger Menu for Mobile -->
@@ -509,17 +510,22 @@
           <h2 class="cta-title font-display">
             Ready to Start Your <span class="text-gradient">Project?</span>
           </h2>
-          <p class="cta-description">
-            Get a free quote today and see how we can bring your ideas to life with 
-            precision 3D printing technology.
-          </p>
+  <p class="cta-kicker">
+    Feel free to contact us — we’re happy to help and answer your questions.
+  </p>
+
+
           <div class="cta-buttons">
-            <a href="/contact.html" class="btn btn-primary">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-              Get Free Quote
-            </a>
+    <a 
+      href="https://wa.me/96171290849?text=Hi!%20I%E2%80%99m%20interested%20in%20a%20custom%203D%20print%20and%20would%20like%20a%20price%20estimate." 
+      target="_blank"
+      class="btn btn-primary"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+      Contact us on WhatsApp
+    </a>
             <a href="/about.html" class="btn btn-outline">
               Learn About Us
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -566,6 +572,7 @@
 
  
     <script src="../js/nav.js"></script>
+    <script src="./js/app.js"></script>
       <script>
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
