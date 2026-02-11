@@ -3,59 +3,44 @@
 }
 
 
-/* ================= HERO ================= */
-.hero {
+.hero.hero-image {
   position: relative;
-  height: 520px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   overflow: hidden;
-  
 }
 
-.hero::before {
+.hero.hero-image .hero-img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;       /* 👈 cover hero area */
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+
+/* Slight overlay for contrast if needed */
+.hero.hero-image::after {
   content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255,107,0,0.35), transparent);
-  top: -180px;
-  left: -180px;
-  animation: floatOrb 12s infinite alternate;
-  transform-style: preserve-3d;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,15,26,0.2),
+    rgba(10,15,26,0.6)
+  );
+  pointer-events: none;
 }
 
-@keyframes floatOrb {
-  to {
-    transform: translate3d(300px, 300px, 120px) rotateZ(20deg);
+@media (max-width: 600px) {
+  .hero.hero-image {
+    height: 260px;   /* better mobile hero height */
+  }
+
+  .hero.hero-image .hero-img {
+    object-position: center top; /* keeps logo visible */
   }
 }
 
-/* 3D Text */
-.hero-3d-text {
-  display: flex;
-  gap: 12px;
-  perspective: 1000px;
-  z-index: 2;
-}
-
-.hero-3d-text span {
-  font-size: 4rem;
-  font-weight: bold;
-  color: var(--brand);
-  display: inline-block;
-  transform-style: preserve-3d;
-  animation: float3D 4s ease-in-out infinite alternate;
-}
-
-@keyframes float3D {
-  50% {
-    transform: rotateX(18deg) rotateY(-18deg) translateZ(30px);
-    text-shadow: 6px 6px 18px rgba(0,0,0,0.7);
-  }
-}
 
 /* ================= FILTERS ================= */
 .filters {
