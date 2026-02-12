@@ -17,6 +17,7 @@
    
 <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="./css/pages.css">
 
 
 
@@ -31,7 +32,6 @@
     <li><a href="products.html">Products</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
   </ul>
   
   <!-- Mobile Icons Container -->
@@ -191,6 +191,81 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-header">
+      <h2 class="font-display">
+        Frequently Asked <span class="text-gradient">Questions</span>
+      </h2>
+      <p>Quick answers to common questions about our 3D printing services.</p>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item glass-card">
+        <div class="faq-question">
+          <h3>What file formats do you accept for 3D printing?</h3>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <p>We accept STL, OBJ, 3MF, and STEP files. If you have another format, contact us and we’ll see how we can help.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card">
+        <div class="faq-question">
+          <h3>How long does 3D printing take?</h3>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <p>Printing time depends on the size and complexity of your model. Small items may take a few hours, while larger projects can take one or more days.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card">
+        <div class="faq-question">
+          <h3>Can you help me design my product?</h3>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! If you don’t have a 3D model, we can help you design one based on your idea or sketch.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card">
+        <div class="faq-question">
+          <h3>How much does 3D printing cost?</h3>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <p>The price depends on the size, material, and complexity of the print. You can request a free price estimate on WhatsApp before ordering.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card">
+        <div class="faq-question">
+          <h3>Do you offer delivery?</h3>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, we can arrange delivery depending on your location. Contact us on WhatsApp to discuss delivery options.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   <!-- Footer -->
   <footer class="footer">
   <div class="footer-container">
@@ -206,7 +281,6 @@
         <li><a href="products.html">Products</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
 
@@ -228,6 +302,27 @@
   <script src="../script.js"></script>
   <script src="./js/cart-badge.js"></script>
   <!-- <script src="./js/app.js"></script> -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+      const question = item.querySelector(".faq-question");
+
+      question.addEventListener("click", () => {
+        const isOpen = item.classList.contains("open");
+
+        // Close all
+        faqItems.forEach(i => i.classList.remove("open"));
+
+        // Open clicked one if it was closed
+        if (!isOpen) {
+          item.classList.add("open");
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
