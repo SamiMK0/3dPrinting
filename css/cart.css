@@ -30,22 +30,7 @@
   }
 }
 
-/* 3D Text */
-.hero-3d-text {
-  display: flex;
-  gap: 12px;
-  perspective: 1000px;
-  z-index: 2;
-}
 
-.hero-3d-text span {
-  font-size: 4rem;
-  font-weight: bold;
-  color: var(--brand);
-  display: inline-block;
-  transform-style: preserve-3d;
-  animation: float3D 4s ease-in-out infinite alternate;
-}
 
 @keyframes float3D {
   50% {
@@ -53,6 +38,98 @@
     text-shadow: 6px 6px 18px rgba(0,0,0,0.7);
   }
 }
+
+.hero.hero-image {
+  position: relative;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 90px; /* space below fixed navbar */
+}
+
+.hero.hero-image .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,15,26,0.3),
+    rgba(10,15,26,0.75)
+  );
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  padding: 20px;
+}
+
+.hero-overlay h1 {
+  font-size: clamp(28px, 6vw, 44px);
+  margin-bottom: 8px;
+}
+
+.hero-overlay p {
+  max-width: 520px;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+@media (max-width: 600px) {
+  .hero.hero-image {
+    height: 220px;
+    border-radius: 0;
+  }
+
+  .hero-overlay h1 {
+    font-size: 26px;
+  }
+
+  .hero-overlay p {
+    font-size: 0.85rem;
+  }
+}
+/* Extra small phones (≤ 400px) */
+@media (max-width: 400px) {
+  .hero.hero-image {
+    height: 180px;        /* smaller hero for tiny screens */
+    margin-top: 80px;    /* keeps space below fixed navbar */
+    border-radius: 0;    /* edge-to-edge feels better on phones */
+  }
+
+  .hero.hero-image .hero-img {
+    object-position: center top;  /* keep main subject visible */
+  }
+
+  .hero-overlay {
+    padding: 12px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 22px;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+
+  .hero-overlay p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
 #Checkout{
 color: #e65c00;
 }
